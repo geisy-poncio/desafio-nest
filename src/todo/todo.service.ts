@@ -3,6 +3,7 @@ import { ToDo } from "./interfaces/todo.interface"
 import { CreateToDoDto } from "./dtos/create-todo.dto"
 import { GetAllToDoDto } from "./dtos/get-all-todo.dto"
 import { ToDoNotFoundException } from "src/exceptions/todo-not-found.exception"
+import { UpdateToDoDto, UpdateToDoParams } from "./dtos/update-todo.dto"
 import { DeleteToDoDto } from "./dtos/delete-todo.dto"
 
 @Injectable()
@@ -25,10 +26,10 @@ export class ToDoService {
         return Object.values(this.toDoStore).filter(toDo => !dto.status || toDo.status === dto.status)
     }
 
-    getById(id: string): ToDo { 
+    getById(id: string): ToDo {
         const toDo = this.toDoStore[id]
-        
-        if (!toDo) { 
+
+        if (!toDo) {
             throw new ToDoNotFoundException()
         }
 
@@ -38,5 +39,17 @@ export class ToDoService {
     delete(dto: DeleteToDoDto): void {
         this.getById(dto.todoId)
         delete this.toDoStore[dto.todoId]
-    } 
+    }
+
+    update(params: UpdateToDoParams, dto: UpdateToDoDto): ToDo {
+        const toDo = this.getById(params.todoId)
+        this.toDoStore[params.todoId] = {
+            ...toDo,
+            title: dto.title,
+            body: dto.body,
+            status: dto.status,
+        }
+
+        return this.toDoStore[params.todoId]
+    }
 }

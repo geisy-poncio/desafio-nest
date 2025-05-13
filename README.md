@@ -8,7 +8,7 @@
   - O filtro é opcional, quando não for informado a API deve retornar todos To Do's
 - [x] Uma rota para criar o To Do, com validação dos campos do body. Essa rota deve retornar os dados do To Do que foi criado.
 - [x] Uma rota para excluir um To Do. Essa rota deve retornar o response vazio.
-- [ ] Uma rota para atualizar um To Do. Essa rota deve retornar os dados atualizados do To Do.
+- [x] Uma rota para atualizar um To Do. Essa rota deve retornar os dados atualizados do To Do.
 > Para simplificar, o armazenamento dos To Do's pode ser feito apenas em memória
 ```
 ToDo = {

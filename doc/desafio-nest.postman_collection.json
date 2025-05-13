@@ -1,0 +1,546 @@
+{
+	"info": {
+		"_postman_id": "b33a0d9b-3097-4a72-b726-b4617719462c",
+		"name": "desafio-nest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31644315"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Adicionar documentação\",\r\n    \"body\": \"Adicionar documentação com swagger no repositorio desafio-nest\",\r\n    \"status\": \"todo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/todos"
+			},
+			"response": [
+				{
+					"name": "CREATED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Testes unitários\",\r\n    \"body\": \"Criar testes unitários no repositorio desafios-nest utilizando jest, com o objetivo de aumentar a cobertura para no minimo 90%\",\r\n    \"status\": \"todo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/todos"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "273"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"111-z2nOgdwWunPmUtj3WnjtU5dvRYc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 May 2025 16:25:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"ToDo successfully created\",\n    \"data\": {\n        \"id\": \"8036c26d-aa5d-4ad6-b254-df9063a0e604\",\n        \"title\": \"Testes unitários\",\n        \"body\": \"Criar testes unitários no repositorio desafios-nest utilizando jest, com o objetivo de aumentar a cobertura para no minimo 90%\",\n        \"status\": \"todo\"\n    }\n}"
+				},
+				{
+					"name": "Invalid input",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Adicionar documentação\",\r\n    \"body\": \"Adicionar documentação com swagger no repositorio desafio-nest\",\r\n    \"status\": \"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/todos"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"76-sK9vsft9S4nQM0SwngfePLP9VoE\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 May 2025 16:32:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": [\n        \"status must be one of the following values: todo, doing, done\"\n    ],\n    \"error\": \"Invalid input\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/todos",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "todo",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/todos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "doing",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "445"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1bd-D9Vs9kNYvy4SJnrBdkFRIg7kYNw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 May 2025 16:27:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"ToDos successfully found\",\n    \"data\": [\n        {\n            \"id\": \"8036c26d-aa5d-4ad6-b254-df9063a0e604\",\n            \"title\": \"Testes unitários\",\n            \"body\": \"Criar testes unitários no repositorio desafios-nest utilizando jest, com o objetivo de aumentar a cobertura para no minimo 90%\",\n            \"status\": \"todo\"\n        },\n        {\n            \"id\": \"3699966e-5af1-431d-9314-bb3f2470409c\",\n            \"title\": \"Adicionar documentação\",\n            \"body\": \"Adicionar documentação com swagger no repositorio desafio-nest\",\n            \"status\": \"todo\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Adicionar documentação\",\r\n    \"body\": \"Adicionar documentação com swagger no repositorio desafio-nest\",\r\n    \"status\": \"doing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/todos/:todoId",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"todos",
+						":todoId"
+					],
+					"variable": [
+						{
+							"key": "todoId",
+							"value": "8036c26d-aa5d-4ad6-b254-df9063a0e604"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Adicionar documentação\",\r\n    \"body\": \"Adicionar documentação com swagger no repositorio desafio-nest\",\r\n    \"status\": \"doing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/todos/:todoId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"todos",
+								":todoId"
+							],
+							"variable": [
+								{
+									"key": "todoId",
+									"value": "3699966e-5af1-431d-9314-bb3f2470409c"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "218"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"da-d2d3xnQuh/sCRmqSbVgO4SRoIpE\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 May 2025 16:28:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"ToDo successfully updated\",\n    \"data\": {\n        \"id\": \"3699966e-5af1-431d-9314-bb3f2470409c\",\n        \"title\": \"Adicionar documentação\",\n        \"body\": \"Adicionar documentação com swagger no repositorio desafio-nest\",\n        \"status\": \"doing\"\n    }\n}"
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Adicionar documentação\",\r\n    \"body\": \"Adicionar documentação com swagger no repositorio desafio-nest\",\r\n    \"status\": \"doing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/todos/:todoId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"todos",
+								":todoId"
+							],
+							"variable": [
+								{
+									"key": "todoId",
+									"value": "e3117c46-f33d-4ef7-824b-eed37e919805"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-cBhKRtk/gbMYb3YoL5mCrKeCQjM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 May 2025 16:29:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"ToDo not found\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/todos/:todoId",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"todos",
+						":todoId"
+					],
+					"variable": [
+						{
+							"key": "todoId",
+							"value": "8036c26d-aa5d-4ad6-b254-df9063a0e604"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/todos/:todoId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"todos",
+								":todoId"
+							],
+							"variable": [
+								{
+									"key": "todoId",
+									"value": "8036c26d-aa5d-4ad6-b254-df9063a0e604"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 May 2025 16:30:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/todos/:todoId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"todos",
+								":todoId"
+							],
+							"variable": [
+								{
+									"key": "todoId",
+									"value": "e3117c46-f33d-4ef7-824b-eed37e919805"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-cBhKRtk/gbMYb3YoL5mCrKeCQjM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 May 2025 16:30:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"ToDo not found\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
