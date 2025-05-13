@@ -1,8 +1,9 @@
-import { Body, Controller, Get, Post, Query } from "@nestjs/common"
+import { Body, Controller, Delete, Get, Param, Post, Query } from "@nestjs/common"
 import { ToDoService } from "./todo.service"
 import { ToDo } from "./interfaces/todo.interface"
 import { CreateToDoDto } from "./dtos/create-todo.dto"
 import { GetAllToDoDto } from "./dtos/get-all-todo.dto"
+import { DeleteToDoDto } from "./dtos/delete-todo.dto"
 
 @Controller("todos")
 export class ToDoController {
@@ -26,5 +27,10 @@ export class ToDoController {
             message: "ToDos successfully found",
             data: toDos,
         }
+    }
+
+    @Delete(":todoId")
+    delete(@Param() dto: DeleteToDoDto): void {
+        this.toDoService.delete(dto)
     }
 }
