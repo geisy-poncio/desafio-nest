@@ -1,6 +1,6 @@
 import { IsEnum, IsNotEmpty, IsString, IsUUID, MaxLength } from "class-validator"
-import { toDoStatus } from "../interfaces/todo.interface"
 import { UUID } from "crypto"
+import { toDoStatus } from "../entities/todo-status.entities"
 
 export class UpdateToDoDto {
     @IsNotEmpty()

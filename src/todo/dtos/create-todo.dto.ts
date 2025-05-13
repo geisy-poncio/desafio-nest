@@ -1,5 +1,5 @@
 import { IsEnum, IsNotEmpty, IsString, MaxLength } from "class-validator"
-import { toDoStatus } from "../interfaces/todo.interface"
+import { toDoStatus } from "../entities/todo-status.entities"
 
 export class CreateToDoDto {
     @IsNotEmpty()

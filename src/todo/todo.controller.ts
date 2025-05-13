@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from "@nestjs/common"
 import { ToDoService } from "./todo.service"
-import { ToDo } from "./interfaces/todo.interface"
+import { ToDo } from "./entities/todo.entities"
 import { CreateToDoDto } from "./dtos/create-todo.dto"
 import { GetAllToDoDto } from "./dtos/get-all-todo.dto"
 import { UpdateToDoDto, UpdateToDoParams } from "./dtos/update-todo.dto"

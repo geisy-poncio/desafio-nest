@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional } from "class-validator"
-import { toDoStatus } from "../interfaces/todo.interface"
+import { toDoStatus } from "../entities/todo-status.entities"
 
 export class GetAllToDoDto {
     @IsOptional()
